@@ -28,18 +28,11 @@ function getSteps() {
   return ['Personal Details', 'Event Details', 'Payment Type'];
 }
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <PersonalDetails />;
-    case 1:
-      return <EventDetails />;
-    case 2:
-      return <PaymentDetails />;
-    default:
-      return 'Unknown step';
-  }
-}
+const getStepContent = (step) => ({
+  0: <PersonalDetails />,
+  1: <EventDetails />,
+  2: <PaymentDetails />,
+})[step];
 
 
 const New = () => {
